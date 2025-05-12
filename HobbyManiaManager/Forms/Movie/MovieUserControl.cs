@@ -23,6 +23,7 @@ namespace HobbyManiaManager
 
         public void Load(Movie movie)
         {
+            this.labelgenre.Text = "Genres: " + movie.GenresAsSting;
             this.Movie = movie;
             this.labelId.Text = $"ID: {Movie.Id.ToString()}";
             this.labelId.AutoSize = true;
@@ -44,13 +45,17 @@ namespace HobbyManiaManager
             this.circularProgressBarVotes.Value = (int)Math.Round(Movie.VoteAverage * 10);
             this.circularProgressBarVotes.Text = $"{Math.Round(Movie.VoteAverage * 10)}%";
 
-            this.labelOriginalTitle.Location = new Point(this.labelOriginalTitle.Location.X, this.labelTitle.Bottom + 10);
-            this.circularProgressBarVotes.Location = new Point(this.circularProgressBarVotes.Location.X, this.labelOriginalTitle.Bottom + 10);
-            this.labelOverview.Location = new Point(this.circularProgressBarVotes.Right + 10, this.labelOriginalTitle.Bottom + 10);
-            this.labelVotesCount.Location = new Point(this.labelVotesCount.Location.X, this.circularProgressBarVotes.Bottom + 5);
+            this.labelgenre.Location = new Point(this.labelTitle.Location.X, this.labelTitle.Bottom + 10);
+            this.labelOriginalTitle.Location = new Point(this.labelgenre.Location.X, this.labelgenre.Bottom + 10);
+            this.circularProgressBarVotes.Location = new Point(this.labelOriginalTitle.Location.X + 10, this.labelOriginalTitle.Bottom + 20);
+            this.labelOverview.Location = new Point(this.circularProgressBarVotes.Right + 10, this.labelOriginalTitle.Bottom + 20);
+            this.labelVotesCount.Location = new Point(this.circularProgressBarVotes.Location.X, this.circularProgressBarVotes.Bottom + 15);
+
 
             CheckAvailability(movie);
             this.Refresh();
+
+            
         }
 
         private void CheckAvailability(Movie movie)
@@ -82,5 +87,7 @@ namespace HobbyManiaManager
             var rentalForm = new RentalForm(Movie, this);
             rentalForm.ShowDialog();
         }
+
+      
     }
 }
