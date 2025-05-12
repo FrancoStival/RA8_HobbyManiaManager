@@ -82,5 +82,18 @@ namespace HobbyManiaManager
             var rentalForm = new RentalForm(Movie, this);
             rentalForm.ShowDialog();
         }
+
+        private void buttonImbID_Click(object sender, EventArgs e)
+        {
+            if (Movie != null)
+            {
+                ImbdForm imbdform = new ImbdForm(Movie.imdb_id, Movie.Title);
+                imbdform.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay información de IMDB disponible para esta película.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
