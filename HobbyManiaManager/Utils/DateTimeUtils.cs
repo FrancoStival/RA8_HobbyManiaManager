@@ -13,9 +13,10 @@ namespace HobbyManiaManager.Utils
             return (int)(endDate - startDate).Duration().TotalDays;
         }
 
-        public static double GetDifferenceInSeconds(DateTime startDate, DateTime endDate)
+        public static double GetDifferenceInSeconds(DateTime startDate, DateTime? endDate)
         {
-            return (endDate - startDate).Duration().TotalSeconds;
+
+            return (endDate - startDate).Value.Duration().TotalSeconds;
         }
 
         public static double GetDifferenceInMinutes(DateTime startDate, DateTime endDate)
