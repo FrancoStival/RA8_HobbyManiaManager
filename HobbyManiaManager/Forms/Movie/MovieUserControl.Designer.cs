@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieUserControl));
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBoxPoster = new System.Windows.Forms.PictureBox();
             this.labelOriginalTitle = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.buttonStartEndRent = new System.Windows.Forms.Button();
             this.circularProgressBarVotes = new CircularProgressBar.CircularProgressBar();
             this.labelVotesCount = new System.Windows.Forms.Label();
+            this.buttonImbID = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvailable)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +69,7 @@
             this.labelOriginalTitle.Location = new System.Drawing.Point(212, 54);
             this.labelOriginalTitle.MaximumSize = new System.Drawing.Size(600, 0);
             this.labelOriginalTitle.Name = "labelOriginalTitle";
-            this.labelOriginalTitle.Size = new System.Drawing.Size(600, 24);
+            this.labelOriginalTitle.Size = new System.Drawing.Size(600, 0);
             this.labelOriginalTitle.TabIndex = 2;
             this.labelOriginalTitle.Text = "Original Title";
             // 
@@ -163,10 +165,21 @@
             this.labelVotesCount.Text = "Votes Count";
             this.labelVotesCount.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // buttonImbID
+            // 
+            this.buttonImbID.Image = ((System.Drawing.Image)(resources.GetObject("buttonImbID.Image")));
+            this.buttonImbID.Location = new System.Drawing.Point(820, 210);
+            this.buttonImbID.Name = "buttonImbID";
+            this.buttonImbID.Size = new System.Drawing.Size(83, 49);
+            this.buttonImbID.TabIndex = 11;
+            this.buttonImbID.UseVisualStyleBackColor = true;
+            this.buttonImbID.Click += new System.EventHandler(this.buttonImbID_Click);
+            // 
             // MovieUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonImbID);
             this.Controls.Add(this.labelVotesCount);
             this.Controls.Add(this.circularProgressBarVotes);
             this.Controls.Add(this.buttonStartEndRent);
@@ -198,5 +211,6 @@
         private System.Windows.Forms.Button buttonStartEndRent;
         private CircularProgressBar.CircularProgressBar circularProgressBarVotes;
         private System.Windows.Forms.Label labelVotesCount;
+        private System.Windows.Forms.Button buttonImbID;
     }
 }
