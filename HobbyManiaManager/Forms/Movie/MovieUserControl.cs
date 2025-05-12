@@ -65,9 +65,11 @@ namespace HobbyManiaManager
             }
             else
             {
+                Customer movieRentedCustomer = CustomersRepository.Instance.GetById(service.GetMovieRental(movie.Id).CustomerId);
                 this.buttonStartEndRent.Text = "End Rent";
                 this.pictureBoxAvailable.BackColor = Color.Red;
-                this.labelAvailable.Text = "Rental not available";
+                this.labelAvailable.Text = $"Rental not available, rented by: {movieRentedCustomer.Name} ({movieRentedCustomer.Id})";
+
             }
         }
 
