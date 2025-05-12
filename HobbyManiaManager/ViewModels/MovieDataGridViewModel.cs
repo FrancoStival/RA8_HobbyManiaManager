@@ -7,12 +7,15 @@ namespace HobbyManiaManager.ViewModels
     {
         public MovieDataGridViewModel(Movie m)
         {
+            IsAvailable = new RentalService().IsAvailable(m);
             Id = m.Id;
             Title = m.Title;
             OriginalTitle = m.OriginalTitle;
             ReleaseDate = m.ReleaseDate;
             VoteAverage = Math.Round(m.VoteAverage *10);
         }
+
+        public bool IsAvailable { get; set; }
 
         public int Id { get; set; }
 
