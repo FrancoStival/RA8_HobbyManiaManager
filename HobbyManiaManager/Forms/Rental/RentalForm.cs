@@ -146,6 +146,10 @@ namespace HobbyManiaManager.Forms
                 // Ending an existing rental
                 _rentalService.FinishRental(_customer, _movie, this.textBoxRentalNotes.Text, dateTimePickerEnd.Value);
                 MessageBox.Show($"Rent finished for movie: {_movie.Title}.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                var ticket = new TicketForm(_movie, _customer, dateTimePickerStartDate.Value, dateTimePickerEnd.Value
+                    );
+                ticket.ShowDialog();
             }
             this._parent?.Refresh();
             this.Dispose();

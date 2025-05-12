@@ -70,6 +70,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\TicketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TicketForm.Designer.cs">
+      <DependentUpon>TicketForm.cs</DependentUpon>
     <Compile Include="Forms\ImbdForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Rental\RentalHistoryForm.resx">
       <DependentUpon>RentalHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TicketForm.resx">
+      <DependentUpon>TicketForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
