@@ -33,6 +33,9 @@ namespace HobbyManiaManager.Forms
         }
         private void ConfigureForm()
         {
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             txtCustomerId.ReadOnly = true;
             txtMovieId.ReadOnly = true;
             txtCustomerName.ReadOnly = true;
