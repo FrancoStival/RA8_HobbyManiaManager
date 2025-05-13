@@ -13,6 +13,8 @@ namespace HobbyManiaManager
         private CultureInfo cultureInfo;
         private RentalService service;
         private Movie Movie;
+        public Action _refreshAction;
+
 
         public MovieUserControl()
         {
@@ -70,9 +72,11 @@ namespace HobbyManiaManager
             }
             else
             {
+                Customer movieRentedCustomer = CustomersRepository.Instance.GetById(service.GetMovieRental(movie.Id).CustomerId);
                 this.buttonStartEndRent.Text = "End Rent";
                 this.pictureBoxAvailable.BackColor = Color.Red;
-                this.labelAvailable.Text = "Rental not available";
+                this.labelAvailable.Text = $"Rental not available, rented by: {movieRentedCustomer.Name} ({movieRentedCustomer.Id})";
+
             }
         }
 
@@ -86,6 +90,21 @@ namespace HobbyManiaManager
         {
             var rentalForm = new RentalForm(Movie, this);
             rentalForm.ShowDialog();
+            _refreshAction?.Invoke();
+            this.Refresh();
+        }
+
+        private void buttonImbID_Click(object sender, EventArgs e)
+        {
+            if (Movie != null)
+            {
+                ImbdForm imbdform = new ImbdForm(Movie.imdb_id, Movie.Title);
+                imbdform.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay información de IMDB disponible para esta película.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
       
