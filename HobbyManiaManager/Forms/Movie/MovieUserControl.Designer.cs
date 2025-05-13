@@ -39,7 +39,10 @@
             this.buttonStartEndRent = new System.Windows.Forms.Button();
             this.circularProgressBarVotes = new CircularProgressBar.CircularProgressBar();
             this.labelVotesCount = new System.Windows.Forms.Label();
+
+            this.labelgenre = new System.Windows.Forms.Label();
             this.buttonImbID = new System.Windows.Forms.Button();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvailable)).BeginInit();
             this.SuspendLayout();
@@ -133,7 +136,7 @@
             this.circularProgressBarVotes.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.circularProgressBarVotes.InnerMargin = 2;
             this.circularProgressBarVotes.InnerWidth = -1;
-            this.circularProgressBarVotes.Location = new System.Drawing.Point(217, 83);
+            this.circularProgressBarVotes.Location = new System.Drawing.Point(216, 83);
             this.circularProgressBarVotes.MarqueeAnimationSpeed = 2000;
             this.circularProgressBarVotes.Name = "circularProgressBarVotes";
             this.circularProgressBarVotes.OuterColor = System.Drawing.Color.Gray;
@@ -165,6 +168,16 @@
             this.labelVotesCount.Text = "Votes Count";
             this.labelVotesCount.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+
+            // labelgenre
+            // 
+            this.labelgenre.AutoSize = true;
+            this.labelgenre.Location = new System.Drawing.Point(228, 41);
+            this.labelgenre.Name = "labelgenre";
+            this.labelgenre.Size = new System.Drawing.Size(56, 13);
+            this.labelgenre.TabIndex = 11;
+            this.labelgenre.Text = "labelgenre";
+
             // buttonImbID
             // 
             this.buttonImbID.Image = ((System.Drawing.Image)(resources.GetObject("buttonImbID.Image")));
@@ -174,12 +187,17 @@
             this.buttonImbID.TabIndex = 11;
             this.buttonImbID.UseVisualStyleBackColor = true;
             this.buttonImbID.Click += new System.EventHandler(this.buttonImbID_Click);
+
             // 
             // MovieUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            this.Controls.Add(this.labelgenre);
+
             this.Controls.Add(this.buttonImbID);
+
             this.Controls.Add(this.labelVotesCount);
             this.Controls.Add(this.circularProgressBarVotes);
             this.Controls.Add(this.buttonStartEndRent);
@@ -211,6 +229,10 @@
         private System.Windows.Forms.Button buttonStartEndRent;
         private CircularProgressBar.CircularProgressBar circularProgressBarVotes;
         private System.Windows.Forms.Label labelVotesCount;
+
+        private System.Windows.Forms.Label labelgenre;
+
         private System.Windows.Forms.Button buttonImbID;
+
     }
 }
